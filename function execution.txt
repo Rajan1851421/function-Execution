@@ -1,0 +1,42 @@
+1. Global Execution Context:
+
+The global execution context is the initial context created when your JavaScript code starts running. 
+It represents the default environment where code outside of any function is executed. 
+It includes the global object (window in a browser, global in Node.js),
+ the global scope, and any variables or functions defined in the global scope. 
+The global execution context is always present throughout the execution of the script.
+
+
+
+2. Function Execution Context:
+
+Whenever a function is called, a new execution context is created for that function. 
+This function execution context has its own scope, which includes parameters, 
+local variables, and inner functions declared within that function. 
+It also has a reference to its outer environment, 
+which is the execution context of the function's lexical scope (where the function was defined).
+
+
+
+3. Execution Context Stack:
+
+The execution context stack, also known as the call stack, is a data structure that keeps track of
+ the active execution contexts. It follows the Last-In-First-Out (LIFO) principle. 
+The global execution context is at the bottom of the stack, and as functions are called, 
+their execution contexts are pushed onto the stack. When a function finishes executing, 
+its execution context is popped off the stack, and the control returns to the previous context.
+
+
+    |                    |
+    |   Function 3       |
+    |   Execution Context|
+    |--------------------|
+    |   Function 2       |
+    |   Execution Context|
+    |--------------------|
+    |   Function 1       |
+    |   Execution Context|
+    |--------------------|
+    |   Global           |
+    |   Execution Context|
+    |--------------------|
